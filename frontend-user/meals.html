@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Kitchen Project</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/81f8329302.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+</head>
+<!-- custom css -->
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="userstyle.css">
+<link rel="stylesheet" href="preloader.css">
+<body>
+  <div class="loader-wrapper">
+    <div class="u-loading">
+        <div class="u-loading__symbol">
+          <img src="pisosmall.png">
+        </div>
+      </div>
+    </div>
+<script>
+    // loader
+    $(window).on("load",function(){
+      $(".loader-wrapper").fadeOut("slow");
+  
+    });
+</script>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <div class="app-header header-shadow">
+            <div class="app-header__logo">
+                <div class="logo-src">
+                    <img src="pisoicon.png">
+                </div>
+                <div class="header__pane ml-auto">
+                    <div>
+                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                            data-class="closed-sidebar">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                    <button type="button"
+                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>
+            <div class="app-header__content">
+                <div class="app-header-left">
+                    <div class="search-wrapper">
+                        <div class="input-holder">
+                            <input type="text" class="search-input" placeholder="Type to search">
+                            <button class="search-icon"><span></span></button>
+                        </div>
+                        <button class="close"></button>
+                    </div>
+                    <ul class="header-menu nav">
+                        <li class="nav-item" >
+                            <a href="meals.html" class="nav-link mm-active">
+                              <i class="fa-solid fa-shop"></i>
+                              Shop
+                            </a>
+                        </li>
+                        <li class="btn-group nav-item">
+                            <a href="index.html" class="nav-link">
+                              <i class="fa-solid fa-chalkboard"></i>
+                              Dashboard
+                            </a>
+                        </li>
+
+                        <li class="btn-group nav-item">
+                          <a href="orderstatus.html" class="nav-link">
+                            <i class="fa-solid fa-note-sticky"></i>
+                            Order Status
+                          </a>
+                      </li>
+                    
+                    </ul>
+                </div>
+                <div class="app-header-right">
+                    <div class="header-btn-lg pr-0">
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                            class="p-0 btn">
+                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg"
+                                                alt="">
+                                                <i class="fa-solid fa-circle-user"></i>
+                                        </a>
+                                        <div tabindex="-1" role="menu" aria-hidden="true"
+                                            class="dropdown-menu dropdown-menu-right">
+                                            <button type="button" tabindex="0" class="dropdown-item">User
+                                                Account</button>
+                                                
+                                                <button type="button" tabindex="0" class="dropdown-item">Pending Payment</button>
+                                                <button type="button" tabindex="0" class="dropdown-item">Billings</button>
+                                                <button type="button" tabindex="0" class="dropdown-item">Log Out</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="app-main">
+            <div class="app-sidebar sidebar-shadow">
+                <div class="app-header__logo">
+                    <div class="logo-src"></div>
+                    <div class="header__pane ml-auto">
+                        <div>
+                            <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                                data-class="closed-sidebar">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-header__mobile-menu">
+                    <div>
+                        <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-header__menu">
+                    <span>
+                        <button type="button"
+                            class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                            <span class="btn-icon-wrapper">
+                                <i class="fa fa-ellipsis-v fa-w-6"></i>
+                            </span>
+                        </button>
+                    </span>
+                </div>
+                <div class="scrollbar-sidebar">
+                    <div class="app-sidebar__inner">
+                        <ul class="vertical-nav-menu">
+                            
+                          
+                         
+
+                            <li class="app-sidebar__heading">Products</li>
+                            <li>
+                                <a href="#">
+                                    <i class="metismenu-icon pe-7s-cart"></i>
+                                    <b><i>Categories</i></b>
+                                   
+                                </a>
+                              
+                                    <li>
+                                        <a href="#">
+                                          <i class="fa-solid fa-tags"></i>
+                                            All
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="meals.html" class="mm-active">
+                                          <i class="fa-solid fa-bowl-food"></i>
+                                            Silog
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="drinks.html">
+                                          <i class="fa-solid fa-mug-saucer"></i>
+                                            </i>Drinks
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                          <i class="fa-solid fa-whiskey-glass"></i>
+                                            </i>By Glass
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                      <a href="#">
+                                        <i class="fa-solid fa-hotdog"></i>
+                                          </i>Extras
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                    <a href="#">
+                                      <i class="fa-solid fa-bottle-water"></i>
+                                        </i>RTD
+                                    </a>
+                                </li>
+
+                                <li>
+                                  <a href="#">
+                                    <i class="fa-solid fa-bread-slice"></i>
+                                      </i>Sandwiches
+                                  </a>
+                              </li>
+
+                              <li>
+                                <a href="snacks.html">
+                                  <i class="fa-solid fa-cookie"></i>
+                                    </i>Snacks
+                                </a>
+                            </li>
+
+                            <li>
+                              <a href="#">
+                                <i class="fa-solid fa-bacon"></i>
+                                  </i>Noodles
+                              </a>
+                          </li>
+
+                          <li>
+                            <a href="#">
+                              <i class="fa-solid fa-bowl-rice"></i>
+                                </i>Kimchi
+                            </a>
+                        </li>
+
+                               
+                            </li>
+                            
+                            <!-- <li>
+                                <a href="tables-regular.html">
+                                    <i class="metismenu-icon pe-7s-display2"></i>
+                                    Tables
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                        <div class="app-page-title">
+                          <main class="main-container">
+
+                            <section class="section">
+                              <h1 class="text-center">Products/Meals</h1>
+                              <div class="products">
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                 
+                                  <h2 class="product__name">Hotsilog</h2>
+                                  <h3 class="product__price">6.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  
+                                 
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">Longsilog</h2>
+                                  <h3 class="product__price">5.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">Kimchi Rice</h2>
+                                  <h3 class="product__price">4.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog</h2>
+                                  <h3 class="product__price">2.50</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+                                <div class="product">
+                                  <img class="product__image" src="longsilog.png">
+                                  <h2 class="product__name">BaconSilog1</h2>
+                                  <h3 class="product__price">1.00</h3>
+                                  <button class="btn btn--primary-add" data-action="ADD_TO_CART">Add</button>
+                                  </button>
+                                </div>
+
+
+                              </div>
+                            </section>
+                          
+                            <section class="section">
+                              <h2 class="text-center">Cart</h2>
+                              <div class="cart"></div>
+                            </section>
+                          
+                    
+                          </main>
+                <!-- ------ -->
+
+                            </div>
+
+                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+            </div>
+        </div>
+        <script type="text/javascript"
+            src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>
+            <script>
+"use strict";
+  // setup the DOM
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartDOM = document.querySelector(".cart");
+  const addToCartBtnsDOM = document.querySelectorAll(
+    '[data-action="ADD_TO_CART"]'
+  );
+  // checking the cart
+  if (cart.length > 0) {
+    cart.forEach(product => {
+      insertElementsInDOM(product);
+      countCartTotal();
+      addToCartBtnsDOM.forEach(addToCartBtnDOM => {
+        const productDOM = addToCartBtnDOM.parentNode;
+        if (
+          productDOM.querySelector(".product__name").textContent === product.name
+        ) {
+          handleActionsOnBtns(addToCartBtnDOM, product);
+        }
+      });
+    });
+  }
+  // interaction to the DOM
+  addToCartBtnsDOM.forEach(addToCartBtnDOM => {
+    addToCartBtnDOM.addEventListener("click", _ => {
+      const productDOM = addToCartBtnDOM.parentNode;
+      const product = {
+        img: productDOM.querySelector(".product__image").getAttribute("src"),
+        name: productDOM.querySelector(".product__name").textContent,
+        price: productDOM.querySelector(".product__price").textContent,
+        quantity: 1
+      };
+      const isInCart =
+            cart.filter(cartItem => cartItem.name === product.name).length > 0;
+      if (!isInCart) {
+        // Add to shopping cart
+        insertElementsInDOM(product);
+        cart.push(product);
+        saveCart();
+        handleActionsOnBtns(addToCartBtnDOM, product);
+      }
+    });
+  });
+  // injecting html tags into the DOM
+  function insertElementsInDOM(product) {
+    cartDOM.insertAdjacentHTML(
+      "beforeend",
+      `
+  <div class = "cart__item">
+  <img class = "cart__item__image" src = "${product.img}" alt = "${
+      product.name
+      }">
+  <h3 class = "cart__item__name">${product.name}</h3>
+  <h3 class = "cart__item__price">${product.price}</h3>
+  <button class="btn btn--primary btn--small ${
+      product.quantity === 1 ? "btn--danger" : ""
+      }" data-action="DECREASE_ITEM">&minus;</button>
+  <h3 class="cart__item__quantity" contentEditable="true" >${product.quantity}</h3>
+  <button class="btn btn--primary btn--small" data-action="INCREASE_ITEM">&plus;</button>
+  <button class="btn btn--danger btn--small" data-action="REMOVE_ITEM">&times;</button>
+  </div>
+  `
+    );
+    addCartFooter();
+  }
+  // handling events
+  function handleActionsOnBtns(addToCartBtnDOM, product) {
+    addToCartBtnDOM.disabled = true;
+    addToCartBtnDOM.textContent = "In Cart";
+    const cartItemsDOM = cartDOM.querySelectorAll(".cart__item");
+    cartItemsDOM.forEach(cartItemDOM => {
+      if (
+        cartItemDOM.querySelector(".cart__item__name").textContent ===
+        product.name
+      ) {
+        cartItemDOM
+          .querySelector('[data-action="INCREASE_ITEM"]')
+          .addEventListener("click", _ => increaseItem(product, cartItemDOM));
+  
+        cartItemDOM
+          .querySelector('[data-action="DECREASE_ITEM"]')
+          .addEventListener("click", _ =>
+                            decreaseItem(product, cartItemDOM, addToCartBtnDOM)
+                           );
+  
+        cartItemDOM
+          .querySelector('[data-action="REMOVE_ITEM"]')
+          .addEventListener("click", _ =>
+                            removeItem(product, cartItemDOM, addToCartBtnDOM)
+                           );
+      }
+    });
+  }
+  // increase amount of item
+  function increaseItem(product, cartItemDOM) {
+    cart.forEach(cartItem => {
+      if (cartItem.name === product.name) {
+        cartItemDOM.querySelector(
+          ".cart__item__quantity"
+        ).textContent = ++cartItem.quantity;
+        cartItemDOM
+          .querySelector('[data-action="DECREASE_ITEM"]')
+          .classList.remove("btn--danger");
+        saveCart();
+      }
+    });
+  }
+  // decrease amount of item
+  function decreaseItem(product, cartItemDOM, addToCartBtnDOM) {
+    cart.forEach(cartItem => {
+      if (cartItem.name === product.name) {
+        if (cartItem.quantity > 1) {
+          cartItemDOM.querySelector(
+            ".cart__item__quantity"
+          ).textContent = --cartItem.quantity;
+          saveCart();
+        } else {
+          removeItem(product, cartItemDOM, addToCartBtnDOM);
+        }
+        if (cartItem.quantity === 1) {
+          cartItemDOM
+            .querySelector('[data-action="DECREASE_ITEM"]')
+            .classList.add("btn--danger");
+        }
+      }
+    });
+  }
+  // remove one item
+  function removeItem(product, cartItemDOM, addToCartBtnDOM) {
+    cartItemDOM.classList.add("cart__item--removed");
+    setTimeout(_ => cartItemDOM.remove(), 250);
+    cart = cart.filter(cartItem => cartItem.name !== product.name);
+    saveCart();
+    addToCartBtnDOM.textContent = "Add";
+    addToCartBtnDOM.disabled = false;
+    if (cart.length < 1) {
+      document.querySelector(".cart-footer").remove();
+    }
+  }
+  // adding cart footer
+  function addCartFooter() {
+    if (!document.querySelector(".cart-footer")) {
+      cartDOM.insertAdjacentHTML(
+        "afterend",
+        `
+  <div class="cart-footer">
+  <button class="btn btn--danger" data-action="CLEAR_CART">Clear</button>
+  <button class="btn btn--primary" data-action="CHECKOUT">Pay</button>
+  </div>
+  `
+      );
+      document
+        .querySelector('[data-action="CLEAR_CART"]')
+        .addEventListener("click", _ => clearItems());
+      document
+        .querySelector('[data-action="CHECKOUT"]')
+        .addEventListener("click", _ => checkout());
+    }
+  }
+  // clear all items
+  function clearItems() {
+    cartDOM.querySelectorAll(".cart__item").forEach(cartItemDOM => {
+      cartItemDOM.classList.add("cart__item--removed");
+      setTimeout(_ => cartItemDOM.remove(), 250);
+    });
+    cart = [];
+    localStorage.removeItem("cart");
+    if (cart.length < 1) {
+      document.querySelector(".cart-footer").remove();
+    }
+    addToCartBtnsDOM.forEach(addToCartBtnDOM => {
+      addToCartBtnDOM.textContent = "Add";
+      addToCartBtnDOM.disabled = false;
+    });
+  }
+  // count total amount
+  function countCartTotal() {
+    let initialCount = 0;
+    cart.forEach(cartItem => {
+      initialCount += cartItem.quantity * cartItem.price;
+    });
+    document.querySelector(
+      '[data-action="CHECKOUT"]'
+    ).textContent = `Pay P${initialCount}`;
+  }
+  
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    countCartTotal();
+  }
+  // paypal checkout method
+  function checkout() {
+  let paypal = `
+<form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_cart">
+<input type="hidden" name="upload" value="1">
+<input type="hidden" name="business" value="adrian@webdev.tube">
+`;
+  cart.forEach((cartItem, index) => {
+    ++index;
+    paypal += `
+<input type="hidden" name="item_name_${index}" value="${cartItem.name}">
+<input type="hidden" name="amount_${index}" value="${cartItem.price}">
+<input type="hidden" name="quantity_${index}" value="${
+    cartItem.quantity
+  }">  
+`;
+  });
+  paypal += `    
+<input type="submit" value="PayPal">
+</form>
+<div class ="overlay"></div>
+`;
+  document.body.insertAdjacentHTML("beforeend", paypal);
+  document.getElementById("paypal-form").submit();
+}
+
+            </script>
+</body>
+
+</html>

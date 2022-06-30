@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Kitchen Project</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link href="https://demo.dashboardpack.com/architectui-html-free/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/81f8329302.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+</head>
+<!-- custom css -->
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="preloader.css">
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="loader-wrapper">
+        <div class="u-loading">
+            <div class="u-loading__symbol">
+                <img src="pisosmall.png">
+            </div>
+        </div>
+    </div>
+    <script>
+        // loader
+        $(window).on("load", function () {
+            $(".loader-wrapper").fadeOut("slow");
+
+        });
+    </script>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <div class="app-header header-shadow">
+            <div class="app-header__logo">
+                <div class="logo-src">
+                    <img src="pisoicon.png">
+                </div>
+                <div class="header__pane ml-auto">
+                    <div>
+                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                            data-class="closed-sidebar">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="app-header__mobile-menu">
+                <div>
+                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="app-header__menu">
+                <span>
+                    <button type="button"
+                        class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>
+            <div class="app-header__content">
+                <div class="app-header-left">
+                    <div class="search-wrapper">
+                        <div class="input-holder">
+                            <input type="text" class="search-input" placeholder="Type to search">
+                            <button class="search-icon"><span></span></button>
+                        </div>
+                        <button class="close"></button>
+                    </div>
+                    <ul class="header-menu nav">
+                        <li class="nav-item">
+                            <a href="meals.html" class="nav-link ">
+                                <i class="fa-solid fa-shop"></i>
+                                Shop
+                            </a>
+                        </li>
+                        <li class="btn-group nav-item">
+                            <a href="index.html" class="nav-link ">
+                                <i class="fa-solid fa-chalkboard"></i>
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li class="btn-group nav-item">
+                            <a href="orderstatus.html" class="nav-link mm-active">
+                                <i class="fa-solid fa-note-sticky"></i>
+                                Order Status
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="app-header-right">
+                    <div class="header-btn-lg pr-0">
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                            class="p-0 btn">
+                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg"
+                                                alt="">
+                                            <i class="fa-solid fa-circle-user"></i>
+                                        </a>
+                                        <div tabindex="-1" role="menu" aria-hidden="true"
+                                            class="dropdown-menu dropdown-menu-right">
+                                            <button type="button" tabindex="0" class="dropdown-item">User
+                                                Account</button>
+
+                                            <button type="button" tabindex="0" class="dropdown-item">Pending
+                                                Payment</button>
+                                            <button type="button" tabindex="0" class="dropdown-item">Billings</button>
+                                            <button type="button" tabindex="0" class="dropdown-item">Log Out</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="app-main">
+            <div class="app-sidebar sidebar-shadow">
+                <div class="app-header__logo">
+                    <div class="logo-src"></div>
+                    <div class="header__pane ml-auto">
+                        <div>
+                            <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                                data-class="closed-sidebar">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-header__mobile-menu">
+                    <div>
+                        <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-header__menu">
+                    <span>
+                        <button type="button"
+                            class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                            <span class="btn-icon-wrapper">
+                                <i class="fa fa-ellipsis-v fa-w-6"></i>
+                            </span>
+                        </button>
+                    </span>
+                </div>
+                <div class="scrollbar-sidebar">
+                    <div class="app-sidebar__inner">
+                        <ul class="vertical-nav-menu">
+
+
+
+
+                            <li class="app-sidebar__heading">Orders</li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-arrow-down-short-wide"></i>
+                                    <b><i>Categories</i></b>
+
+                                </a>
+
+                            <li>
+                                <a href="#" class="mm-active">
+                                    <i class="fa-solid fa-list-ul"></i>
+                                    All Orders
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-spinner"></i>
+                                    Prepared
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-truck"></i>
+                                    </i>Delivered
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-hourglass"></i>
+                                    Pending
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-ban"></i>
+                                    Cancelled
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-check-double"></i>
+                                    </i>Completed
+                                </a>
+                            </li>
+
+
+
+                            </li>
+
+                            <!-- <li>
+                                <a href="tables-regular.html">
+                                    <i class="metismenu-icon pe-7s-display2"></i>
+                                    Tables
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <div class="app-page-title">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-header">Order Status
+
+                                        <div class="btn-actions-pane-right">
+
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table
+                                            class="align-middle mb-0 table table-borderless table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">ID</th>
+                                                    <th class="text-center">Name</th>
+                                                    <th class="text-center">Status</th>
+                                                    <th class="text-center">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center text-muted">#345</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/4.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">John Doe</div>
+                                                                    <div class="widget-subheading opacity-7">Web
+                                                                        Developer</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-warning">Pending</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#347</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/3.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Ruben Tillman</div>
+                                                                    <div class="widget-subheading opacity-7">Etiam sit
+                                                                        amet orci eget</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#321</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/2.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Elliot Huber</div>
+                                                                    <div class="widget-subheading opacity-7">Lorem ipsum
+                                                                        dolor sic</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center text-muted">#55</td>
+                                                    <td>
+                                                        <div class="widget-content p-0">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left mr-3">
+                                                                    <div class="widget-content-left">
+                                                                        <img width="40" class="rounded-circle"
+                                                                            src="assets/images/avatars/1.jpg" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="widget-content-left flex2">
+                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
+                                                                    <div class="widget-subheading opacity-7">UI Designer
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                   
+                                                    <td class="text-center">
+                                                        <div class="badge badge-success">ready</div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-toggle="modal"
+                                                            data-target="#basicModal">Details</button>
+
+
+                                                    </td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="modal" id="basicModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="basicModal" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel">Order Details / Summary</h4>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    
+                                                    
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+ 
+   <div class="container">
+ 
+     
+     
+     <div class="main">
+       
+       
+
+<link href='https://fonts.googleapis.com/css?family=Raleway:600,400' rel='stylesheet' type='text/css'>
+
+<div class="receipt">
+	
+	<header class="header">
+		<div class="header__top">
+			<div class="header__logo">
+				<img src="pisosmall.png">
+			</div>
+			<div class="header__meta">
+				<span class="header__date">25.04.2016</span>
+				<span class="header__serial">0f-113</span>
+				<span class="header__number">25042016</span>
+			</div>
+		</div>
+		<div class="header__greeting">
+			<span class="header__name">Hi, Carlin</span>
+			<span class="header__count">Thank you for purchasing in Pisopay Kitchen.</span>
+			<span class="header__border"></span>
+		</div>
+		<div class="header__spacing"></div>
+	</header>
+	
+	<section class="cart">
+			<h2 class="cart__header">Cart:</h2>
+			<ol class="list">
+				<li class="list__item">
+					<span class="list__name">Lacoste t-shirt</span>
+					<span class="list__price">P48.00</span>
+				</li>
+				<li class="list__item">
+					<span class="list__name">Nike sweatpants</span>
+					<span class="list__price">P125.00</span>
+				</li>
+				<li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li>
+                <li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li>
+                <li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li>
+                <li class="list__item">
+					<span class="list__name">Lacoste t-shirt</span>
+					<span class="list__price">P48.00</span>
+				</li>
+				<li class="list__item">
+					<span class="list__name">Nike sweatpants</span>
+					<span class="list__price">P125.00</span>
+				</li>
+				<li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li>
+                <li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li>
+                <li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li><li class="list__item">
+					<span class="list__name">Lacoste t-shirt</span>
+					<span class="list__price">P48.00</span>
+				</li>
+				<li class="list__item">
+					<span class="list__name">Nike sweatpants</span>
+					<span class="list__price">P125.00</span>
+				</li>
+				<li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li>
+                <li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li>
+                <li class="list__item">
+					<span class="list__name">Converse All-Stars</span>
+					<span class="list__price">P95.00</span>
+				</li>
+			</ol>	
+			<hr class="cart__hr" />
+			<footer class="cart__total">
+				<h3 class="cart__total-label">Total:</h3>
+				<span class="cart__total-price">P268.00</span>				
+			</footer>
+	</section>
+	
+	
+      
+     </div>
+     
+ </div>
+   <!-- <div class="attribution">
+     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+     Coded by <a href="#">Your Name Here</a>.
+   </div> -->
+
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-block text-center card-footer">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- ------ -->
+
+                        </div>
+
+                    </div>
+
+                    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+                </div>
+            </div>
+            <script src="index.js"></script>
+            <script type="text/javascript"
+                src="https://demo.dashboardpack.com/architectui-html-free/assets/scripts/main.js"></script>
+
+</body>
+
+</html>
